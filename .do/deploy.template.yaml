@@ -2,6 +2,9 @@ spec:
   name: quick-valheim-server
   services:
     - name: valheim
+      git:
+        branch: main
+        repo_clone_url: https://github.com/z7-team/quick-valheim-server.git
       dockerfile_path: ./Dockerfile
       envs:
         - key: WORLD_NAME
