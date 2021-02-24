@@ -1,7 +1,16 @@
 spec:
-  name: sample-golang
+  name: quick-valheim-server
   services:
-    - name: web
-      git:
-        branch: main
-        repo_clone_url: https://github.com/z7-team/quick-valheim-server.git
+    - name: valheim
+      dockerfile_path: ./Dockerfile
+      envs:
+        - key: WORLD_NAME
+          value: "Default World"
+          scope: RUN_TIME
+        - key: SERVER_NAME
+          value: "Default Server"
+          scope: RUN_TIME
+        - key: PASSWORD
+          value: password
+          type: SECRET
+          scope: RUN_TIME
