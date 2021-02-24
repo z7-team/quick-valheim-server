@@ -2,6 +2,9 @@ spec:
   name: quick-valheim-server
   services:
     - name: valheim
+      git:
+        branch: main
+        repo_clone_url: https://github.com/z7-team/quick-valheim-server.git
       image:
         registry_type: DOCKER_HUB
         registry: docker.io
@@ -13,7 +16,7 @@ spec:
         - key: SERVER_NAME
           value: "Default Server"
           scope: RUN_TIME
-        - key: SERVER_PASS
+        - key: PASSWORD
           value: password
           type: SECRET
           scope: RUN_TIME
